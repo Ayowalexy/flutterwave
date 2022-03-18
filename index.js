@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 const ConfigurationRoutes = require('./routes/Configuration');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+const MongoDBStore = require('connect-mongo')(session);
 const keys = require('./configs/keys');
 const mongoose = require('mongoose');
 
@@ -26,7 +26,7 @@ db.once('open', () => {
 })
 
 
-const store = new MongoStore({
+const store = new MongoDBStore({
     url: DB,
     secret: keys.SECRETKEY,
     touchAfter: 24 * 3600
