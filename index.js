@@ -9,33 +9,33 @@ const MongoDBStore = require('connect-mongo')(session);
 const keys = require('./configs/keys');
 const mongoose = require('mongoose');
 
-const DB = `mongodb+srv://seinde4:${keys.PASSWORD}@cluster0.pp8yv.mongodb.net/verido?retryWrites=true&w=majority`;
+// const DB = `mongodb+srv://seinde4:${keys.PASSWORD}@cluster0.pp8yv.mongodb.net/verido?retryWrites=true&w=majority`;
 
-mongoose.connect(DB, 
-    {    
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    }
-)
-
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error'))
-db.once('open', () => {
-    console.log('Database connected')
-})
+// mongoose.connect(DB, 
+//     {    
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     }
+// )
 
 
-const store = new MongoDBStore({
-    url: DB,
-    secret: keys.SECRETKEY,
-    touchAfter: 24 * 3600
-})
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error'))
+// db.once('open', () => {
+//     console.log('Database connected')
+// })
+
+
+// const store = new MongoDBStore({
+//     url: DB,
+//     secret: keys.SECRETKEY,
+//     touchAfter: 24 * 3600
+// })
 
 const sessionConfig = {
     secret: keys.COOKIEKEY,
     resave: false,
-    store,
+    // store,
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
