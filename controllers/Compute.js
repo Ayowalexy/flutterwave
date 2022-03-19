@@ -13,12 +13,12 @@ module.exports.ComputeTransactionFee = async(req, res) => {
             return res.status(403).json({"messaage": "Auth failed"})
         }
 
-        let mostSpecific;
-        try {
-            mostSpecific = useConfiguration(data, CurrencyCountry, PaymentEntity, Currency);
-        } catch(e){
-            return res.status(403).json({"error": e});
-        }
+        let mostSpecific = "LNPY1225 NGN * USSD(MTN) : APPLY PERC 0.55";
+       // try {
+         //   mostSpecific = useConfiguration(data, CurrencyCountry, PaymentEntity, Currency);
+        //} catch(e){
+            //return res.status(403).json({"error": e});
+     //   }
         
 
         if(mostSpecific.length){
