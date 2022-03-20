@@ -6,6 +6,6 @@ const Compute = require('../controllers/Compute');
 
 Router.post('/fees', Configs.CreateNewConfiguration);
 
-Router.post('/compute-transaction-fee', Compute.ComputeTransactionFee);
-
+//Router.post('/compute-transaction-fee', Compute.ComputeTransactionFee);
+Router.post('/compute-transaction-fee', async(req, res) => res.send("hello world"));
 module.exports = Router;
