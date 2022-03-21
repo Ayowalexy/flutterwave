@@ -48,17 +48,13 @@ app.use(session(sessionConfig));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-//INITIALIZING ROUTES;
 
 app.get('/', (req, res) => {
     res.send('Hello')
 })
 
 app.use(ConfigurationRoutes);
-
-// app.all('*', (req, res, next) => {
-//     next(new ExpressError('Page Not found', 404))
-// })  
+  
 
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err

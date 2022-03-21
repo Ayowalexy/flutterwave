@@ -1,6 +1,5 @@
 const keys = require('../configs/keys');
 const jwt = require('jsonwebtoken');
-const Configuration = require('../models/Configuration');
 const useConfiguration = require('../utils')
 
 module.exports.ComputeTransactionFee = async(req, res, next) => {
@@ -14,6 +13,7 @@ module.exports.ComputeTransactionFee = async(req, res, next) => {
             if(err){
                 return res.status(403).json({"messaage": "Auth failed"})
             }
+
     
             let mostSpecific;
             try {
