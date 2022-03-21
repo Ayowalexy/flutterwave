@@ -43,7 +43,6 @@ const sessionConfig = {
     }
 }
 
-
 app.use(session(sessionConfig));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
